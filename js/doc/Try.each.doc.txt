@@ -1,0 +1,27 @@
+method Try.each
+	written by septic ( pentropia at gmail dot com )
+	this is another method that has been inspired by the prototype framework, thanks to them!
+	released under the GPL public license
+	file: A_Tools.js
+	
+	Try.each( function lambda [ , function lambda [ , ... ] ] );
+	
+	method tries each of the functions sent as argument and returns the first one that is sucessful
+	
+	ex.
+		function clickNotify() {
+			alert( "you clicked" );
+		}
+		
+		var element = €$E ( "span" );
+		
+		// Add event and ignore failure due to browser support.
+		Try.each(
+			function() { return element.addEventListener( "click" , clickNotify , true ) },
+			function() { return element.attachEvent( "onclick" , clickNotify ) }
+		);
+		
+		insted of actually doing this, use the function €$addEvent
+	
+returns true if @lambda is 'valid'
+returns false if @lambda is not 'valid'

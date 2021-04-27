@@ -1,0 +1,12 @@
+method Try.ifString
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	Try.ifString( string text );
+	@1( string element ):
+		string: string to test if it is valid text string
+	
+
+returns true if @text is string
+returns false if @text is not string

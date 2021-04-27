@@ -1,0 +1,12 @@
+function $Clear
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$Clear( object element );
+	@1( object element ):
+		object: defines the object which is going to be cleared of it's content
+	
+
+returns cleared element on success
+throws exceptions on failure

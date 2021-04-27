@@ -1,0 +1,13 @@
+method Try.ifClass
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	Try.ifString( function instance );
+	@1( function instance ):
+		function: object to test if it is valid 'class'
+	
+	note! 'class' in javascript is practically synonym with 'function'. Just alittle different. I personally finds this annoying that's why ive been trying to write the 'Class' object bundle but it wasn't a great success, maybe in the future.
+	
+returns true if @instance is class
+returns false if @instance is not class

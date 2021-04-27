@@ -1,0 +1,270 @@
+
+Forum.addRes( "forum_entry_creation" , "entry_creation" );
+Forum.RES[ "entry_creation" ].addNotifier( 
+	function( object ) {
+		mk_entry_creation()
+	}
+);
+Forum.RES[ "entry_creation" ].boot = function() {
+	this.link( "forum/entry_creation" );
+};
+Forum.RES[ "entry_creation" ].unboot = function() {
+	this.clear();
+};
+
+Forum.addRes( "forum_thread_creation" , "thread_creation" );
+Forum.RES[ "thread_creation" ].addNotifier( 
+	function( object ) {
+		mk_thread_creation()
+	}
+);
+Forum.RES[ "thread_creation" ].boot = function() {
+	this.link( "forum/thread_creation" );
+};
+Forum.RES[ "thread_creation" ].unboot = function() {
+	this.clear();
+};
+
+function boot_forum( parent ) {
+	Forum.parent = parent;
+
+	mk_list( "threads" , parent );
+	mk_list( "entries" , parent );
+
+	Forum.RES[ "thread_creation" ].start();
+	Forum.RES[ "entry_creation" ].start();
+}
+
+function mk_list( type, parent ) {
+	var Query = {
+		action: "list",
+		type: type
+	}
+	
+	if ( type == "threads" ) Query.parent = Forum.parent;
+	else if ( type == "entries" ) Query.thread = Forum.parent;
+	
+	XCom.simpleCall({
+		op: "forumManager",
+		params: Query,
+		xco_101: function( xco ) {
+			var sxe = xco.content.sxe;
+			
+			var id = sxe.spath( "/list/id" ).$;
+			var txt_name = sxe.spath( "/list/name" ).$;
+			var txt_author_name = sxe.spath( "/list/author_name" ).$;
+			var txt_parent_tree = sxe.spath( "/list/parent_tree" ).$;
+			var txt_parent_name = sxe.spath( "/list/parent_name" ).$;
+			
+			var div_thread = $E( "div" );
+			div_thread.className = "threads";
+			
+			var span_thread_remove = $E( "span" );
+			span_thread_remove.className = "link";
+			span_thread_remove.onclick = function() {
+				act_RemoveThread( id );
+			}
+			$TxT( "remove thread" , span_thread_remove );
+			
+			var name = $E( "span" );
+			name.className = "link";
+			name.onclick = function() {
+				Forum.parent = txt_name;
+				$Clear( "forum_thread_list" );
+				$Clear( "forum_entry_list" );
+				mk_list( "threads" , txt_name );
+				mk_list( "entries" , txt_name );
+				mk_thread_creation();
+				mk_entry_creation();
+			}
+			$TxT( unescape( txt_name ) , name );
+			
+			div_thread.appendChild( $T( unescape( txt_parent_tree ) ) );
+			div_thread.appendChild( name );
+			div_thread.appendChild( $T( " - " + txt_author_name + " - " ) );
+			div_thread.appendChild( span_thread_remove );
+			
+			$( "forum_thread_list" ).appendChild( div_thread );
+		},
+		xco_102: function( xco ) {
+			var id = xco.content.sxe.spath( "/list/id" ).$;
+			var txt_content = xco.content.sxe.spath( "/list/content" ).$;
+			var txt_username = xco.content.sxe.spath( "/list/author_name" ).$;
+			
+			//$TxT( unescape( txt_content + "<br />written by <b>" + txt_username + "</b>" ) , content );
+			
+			var container = $E( "div" );
+			container.className = "forum_entry";
+			
+			var user_left = $E( "div" );
+			user_left.className = "forum_entry_left";
+			$TxT( unescape( txt_username ) + "<br /><a onclick='act_RemoveEntry( " + id + ")' class='link' >Remove</a>" , user_left );
+			
+			var user_right = $E( "div" );
+			user_right.className = "forum_entry_right";
+			$TxT( unescape( txt_content ) , user_right );
+			
+			container.appendChild( user_left );
+			container.appendChild( user_right );
+			
+			$( "forum_entry_list" ).appendChild( container );
+		},
+		xco_begin: function( resp ) {
+			
+		}
+	})
+}
+
+function mk_thread_creation() {
+	var parent_thread = Forum.parent;
+	$TxT( "<span style=\"color : #666666;\">Viewing thread:</span> <span style=\"color : #CCCCCC;\">" + parent_thread + "</span>", $( "forum_thread_viewing" ) );
+}
+
+function mk_entry_creation() {
+	var parent_entry = Forum.parent;
+
+	ParentInput = $( "forum_entry_creation_thread" );
+	ParentInput.value = parent_entry;
+}
+
+function frm_CreateEntrySubmit( ) {
+	var Query = Make.query.fromForm( $( "EntryForm" ) );
+	Query.action = "create_entry";
+	Query.thread = Forum.parent;
+	
+	try {
+		var Query = Make.query.validation(
+			Query , 
+			{
+				name: "content",
+				failId:	"forum_entry_message",
+				evalid: {  
+					test: 32768,
+					property: "length",
+					mod: "<="
+				},
+				
+				fail: {
+					global:		"Validation of entry name failed",
+					eqless:		"Entry must me less or equal to 32768 characters, yours was " + ( Query.name ? Query.name.length : 0 ),
+					invalid:	"You must fill in a valid entry"
+				}
+			}
+		);
+	} catch( e ) {
+		return false;
+	}
+	
+	XCom.simpleCall({
+		op: "forumManager",
+		params: Query,
+		xco_100: function( xco ) {
+			$( "forum_create_entry_input" ).value = "";
+			$Clear( $( "forum_entry_list" ) );
+			mk_list( "entries", Forum.parent );
+		},
+		xco_400: function( xco ) {
+			$( "forum_entry_message" ).appendChild( $T( "Error: " + xco.content.$ ) );
+		},
+		xco_begin: function( resp ) {
+			
+		}
+	})
+	
+	return false;
+}
+
+function frm_CreateThreadSubmit( ) {
+	var Query = Make.query.fromForm( $( "ThreadForm" ) );
+	Query.action = "create_thread";
+	Query.parent = Forum.parent;
+	
+	try {
+		var Query = Make.query.validation(
+			Query , 
+			{
+				name: "name",
+				failId:	"forum_thread_message",
+				evalid: {  
+					test: 128,
+					property: "length",
+					mod: "<="
+				},
+				
+				fail: {
+					global:		"Validation of thread name failed",
+					eqless:		"Thread name must me less or equal to 128 characters, yours was " + ( Query.name ? Query.name.length : 0 ),
+					invalid:	"You must fill in a valid thread name"
+				}
+			}
+		);
+	} catch( e ) {
+		return false;
+	}
+	
+	XCom.simpleCall({
+		op: "forumManager",
+		params: Query,
+		xco_100: function( xco ) {
+			$( "forum_create_thread_input" ).value = "";
+			$Clear( $( "forum_thread_list" ) );
+			mk_list( "threads", Forum.parent );
+		},
+		xco_400: function( xco ) {
+			$( "forum_thread_message" ).appendChild( $T( "Error: " + xco.content.$ ) );
+		},
+		xco_begin: function( resp ) {
+			
+		}
+	})
+	
+	return false;
+}
+
+function act_RemoveEntry( entry_id ) {
+	Query = new Object();
+	Query.action = "remove_entry";
+	Query.id = entry_id;
+	
+	XCom.simpleCall({
+		op: "forumManager",
+		params: Query,
+		xco_100: function( xco ) {
+			$Clear( $( "forum_entry_list" ) );
+			mk_list( "entries", Forum.parent );
+			$TxT( "Entry Removed!" , $( "forum_entry_message" ) );
+		},
+		xco_400: function( xco ) {
+			$( "forum_entry_message" ).appendChild( $T( "Error: " + xco.content.$ ) );
+		},
+		xco_begin: function( resp ) {
+			
+		}
+	})
+	
+	return false;
+}
+
+function act_RemoveThread( thread_id ) {
+	Query = new Object();
+	Query.action = "remove_thread";
+	Query.id = thread_id;
+	
+	XCom.simpleCall({
+		op: "forumManager",
+		params: Query,
+		xco_100: function( xco ) {
+			$Clear( $( "forum_thread_list" ) );
+			mk_list( "threads", Forum.parent );
+			$( "forum_thread_message" ).appendChild( $T( "Thread removed!" ) );
+		},
+		xco_400: function( xco ) {
+			$( "forum_thread_message" ).appendChild( $T( "Error: " + xco.content.$ ) );
+		},
+		xco_begin: function( resp ) {
+			
+		}
+	})
+	
+	return false;
+}

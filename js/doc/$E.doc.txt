@@ -1,0 +1,15 @@
+function $E
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$E( string element_tag [,element_class [,element_id ] ] );
+	@1( string element_tag ):
+		string: defines the element tag of the object that is going to be created with document.createElement();
+	~@2( string element_class ):
+		string: defines the elements class.
+	~@3( string element_id ):
+		string: defines the elements id.
+
+returns created element on success
+throws exceptions on failure

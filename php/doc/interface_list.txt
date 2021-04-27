@@ -1,0 +1,88 @@
+	Input_Get
+		public function get( $get )
+		
+	Input_Post
+		public function post( $post )
+		
+	Doc_Html
+		public function document( $html )
+		
+	Doc_Xml
+		public function document( $xml )
+		
+	Output_Client
+		public function output( $output );
+		
+	Output_File
+		public function output( $output );
+	
+	Note how Output and Document have same method implementation.
+	This is to prevent the application or operation to utilise several methods of output or document creation.
+	
+	Input_Get & Input_Post
+	
+		returns an 'NClientInput' instance instantated to handle get arguments.
+		
+		NClientInput - Public Methods
+			getParam( $name [, $key = false ] )
+				Gets parameter with @name , and if array is expected you can use @key to fetch single element.
+				returns Array, String or False
+			
+			isParam( $name )
+				Checks if parameter @name exists.
+				returns True or False
+				
+			hasParams( void )
+				Checks if instance has parameters at all.
+				return True or False
+				
+			getAll( void )
+				runs 'hasParams' to check if params exists first, then returns all parameters.
+				returns Array with parameters or False.
+				
+	Doc_Html
+		
+		returns an 'HtmlDocument' instance instantated to build an Html DOMDocument
+		
+		HtmlDocument - Public Methods
+			create( [ $title = "" ] )
+				Creates DOMDocument and sets desired title.
+			
+			externalJS( $jsPath )
+				Appends script tag to accomodate an external Javascript file.
+				Relative to root, ex "/js/foo.js"
+				
+			internallJS( $jsName )
+				Appends NoLess internal Javascript with name @jsName.
+				See '/js/doc/' for more information.
+				
+			loadAllInternalJS( void )
+				Appends all internal javascripts available, mostly for development purposes.
+				
+		HtmlDocument - Public Properties
+			$html: DOMElement for the html tag.
+			$head: DOMElement for the head tag.
+			$body: DOMElement for the body tag.
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				

@@ -1,0 +1,30 @@
+function $TxT
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$Remove( object source , object target );
+	@1( object source ):
+		object: defines the object which content is going to be used as source
+	~@2( object target ):
+		object: defines the object which is going to get it's content replaced by the source content.
+		
+	TxT stands for (T)e(x)t(T)ransfer, it is used to take all text content from one object element, and move it into another.
+	This is especially useful one you have a complicated content transfer in need to be made.
+	
+	Requires:
+		€Try.ifObject
+		€Try.ifString
+		€Try.ifValid
+		€Try.each
+		
+	ex.
+		<pre>
+			var msgSpan = €$E ( "span" );
+			TxT( €$T ( "this is the document.body" ) , msgSpan );
+			document.body.appendChild( msgSpan );
+		</pre>
+	
+returns source content as text on success
+throws exceptions on failure
+if ( ~@2 ) returns target object

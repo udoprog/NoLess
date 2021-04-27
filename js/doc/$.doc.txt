@@ -1,0 +1,12 @@
+function $
+	written by septic ( pentropia at gmail dot com )
+	this function can be found in the prototype javascript framework, lots of thanks to them for the inspiration
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$( string object_id );
+	@1( string object_id ):
+		string: defines the object id which is going to be fetched
+
+returns object with corresponding id on success
+throws exceptions on failure

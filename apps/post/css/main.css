@@ -1,0 +1,110 @@
+
+#content_news { /* 140px wide */
+	float : left;
+	clear : left;
+	
+	width : 555px;
+	
+	margin-left : 15px;
+	
+	padding-left : 15px;
+	padding-right : 15px;
+	
+	background : url( "../gfx/content_news_back.png" ) #000000;
+	background-repeat : repeat-y;
+	background-position: top left;
+}
+	#content_news_post {
+		padding-top : 8px;
+		padding-bottom : 8px;
+	}
+	
+	.content_news_list_entry {
+		margin-top : 10px;
+		padding-left : 5px;
+		border-left : 1px solid #000000;		
+	}
+
+#content_news_top {				
+	width : 585px;
+	height : 7px;
+	
+	margin-left : -10px;
+	
+	background : url( "../gfx/content_news_top_back.png" );
+	background-repeat : repeat-x;
+	background-position: top left;
+}
+
+	#content_news_tl {
+		position : absolute;
+		
+		margin-left : -20px;
+		
+		width : 20px;
+		height : 7px;
+	}
+	
+	#content_news_tr {
+		position : absolute;
+		
+		width : 20px;
+		height : 7px;
+		
+		margin-left : 575px;
+	}
+	
+#content_news_left {
+	height : 100%;
+	background : #000000;
+}
+	
+#content_news_bottom {				
+	width : 585px;
+	height : 7px;
+	
+	margin-left : -10px;
+	
+	background : url( "../gfx/content_news_bottom_back.png" );
+	background-repeat : repeat-x;
+	background-position: top left;
+}
+
+	#content_news_bl {
+		position : absolute;
+		
+		width : 20px;
+		height : 7px;
+		
+		margin-left : -20px;
+	}
+	
+	#content_news_br {
+		position : absolute;
+		
+		width : 20px;
+		height : 7px;
+		
+		margin-left : 575px;
+	}
+
+#content_what_is_post { /* 140px wide */
+	float : right;
+
+	width : 140px;
+	height : 90px;
+	
+	background-color : #542331;
+}
+
+#content_discussion {
+	float : center;
+	clear : both;
+	
+	width : 730px;
+	padding : 6px;
+	
+	border : 1px solid #3b1a2f;
+	
+	background-color : #713245;
+}

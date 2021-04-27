@@ -1,0 +1,124 @@
+<div id="register_content">
+	<form onsubmit="return frm_RegisterSubmit()" id="RegisterForm">
+		<table cellspacing="0" cellpadding="0" border="0" style="width : 100%;">
+			<tr><td colspan="2"><div class="register_fields">Private fields</div></td></tr>
+			<tr>
+				<td class="register_column_left">
+					Username
+				</td>
+				<td>
+					<input class="input_register" type="text" name="name" />
+					<span class="input_required"> *</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Password
+				</td>
+				<td>
+					<input class="input_register" type="password" name="pass" />
+					<span class="input_required"> *</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Password again...
+				</td>
+				<td>
+					<input class="input_register" type="password" name="pass_check" />
+					<span class="input_required"> *</span>
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Email
+				</td>
+				<td>
+					<input class="input_register" type="text" name="email" />
+					<span class="input_required"> *</span>
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Email again...
+				</td>
+				<td>
+					<input class="input_register" type="text" name="email_check" />
+					<span class="input_required"> *</span>
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td colspan="2"><div class="register_fields">Public fields</div></td></tr>
+			<tr>
+				<td class="register_column_left">
+					Avatar URL
+				</td>
+				<td>
+					<input class="input_register" type="text" name="avatar_url" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Location
+				</td>
+				<td>
+					<input class="input_register" type="text" name="location" />
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Jabber
+				</td>
+				<td>
+					<input class="input_register" type="text" name="im_jabber" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					MSN Messenger
+				</td>
+				<td>
+					<input class="input_register" type="text" name="im_msn" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					ICQ
+				</td>
+				<td>
+					<input class="input_register" type="text" name="im_icq" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					AIM
+				</td>
+				<td>
+					<input class="input_register" type="text" name="im_aim" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Yahoo Messenger
+				</td>
+				<td>
+					<input class="input_register" type="text" name="im_yahoo" />
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Signature
+				</td>
+				<td>
+					<textarea class="input_register_signature" name="signature"></textarea>
+				</td>
+			</tr>
+		</table>
+		<div style="color : #666666;"><br />* Required</div><br /><br />
+		<input type="submit" value="Register" style="width : 100px;" /><br />
+	</form>
+</div>
+<div id="register_message"></div>

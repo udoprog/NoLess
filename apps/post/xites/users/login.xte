@@ -1,0 +1,37 @@
+<form onsubmit="return frm_LoginSubmit()" id="LoginForm">
+	<table cellspacing="0" cellpadding="0" border="0" style="width : 100%;">
+		<tr>
+			<td class="login_column_left">
+				Username:
+			</td>
+			<td>
+				<input class="login" type="text" name="name" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Password:
+			</td>
+			<td>
+				<input class="login" type="password" name="pass" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				<input class="login_submit" type="submit" value="Login" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="login_error"></div>
+			</td>
+		</tr>
+	<table>
+</form>
+
+<span onclick="$link( 'top_large_rightbox' , 'users/top_large_rightbox' , true )" class="link">Back</span>
+
+<br /><span href="#" onclick="ToggleTop( true )" class="link">Minimize</a>

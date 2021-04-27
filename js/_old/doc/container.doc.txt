@@ -1,0 +1,63 @@
+Constants
+	None
+
+Properties
+	type = "Object_Container"
+		- Type is used when the object is used with the toString() method.
+	id = (First Constructor Argument)
+	
+	node = new Object()
+	node.active = null
+	node.post = new Array()
+		- Node is used to keep track of which node is loaded into the container.
+		! This is mostly for development purposes and it will hopefully one day be removed.
+	
+	object = null
+		- 'object' defines which object the container actually contains.
+	point = null
+		- 'point' defines the object which the container is pointed at. This is where all content is appended.
+	
+	frame = false
+	
+	
+	
+	
+	
+	
+	Manipulating Object of a Container
+	implement( Element object );
+		return-success: Container;
+		return-failure: false;
+		- Uses argument object to directly implement the container.
+	
+	implementText( String text );
+		return-success: Container;
+		return-failure: false;
+		- Creates textnode and implements object on container.
+	
+	implementByTag( String tag );
+		return-success: Container;
+		return-failure: false;
+		- Uses argument 'tag' that must be of object 'String' to create an element object to be implemented with the container.
+	
+	implementById( String id );
+		return-success: Container;
+		return-failure: false;
+		- Uses argument 'id' to fetch the element that has the corresponding id to set an element object to be implemented with the container.
+	
+	Returning information from a Container.
+	Object( void );
+		return-success: Container object;
+		return-failure: false;
+		
+	Point( void );
+		return-success: Container;
+		return-failure: false;
+		
+	Parent( void );
+		return-success: Container;
+		return-failure: false;
+		
+	Frame( void );
+		return-success: Container;
+		return-failure: false;	

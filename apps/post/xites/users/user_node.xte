@@ -1,0 +1,123 @@
+<?
+/*
+	$this->sql->prepare( "postUser" );
+	$session = $this->nsecure->getSession();
+	$username = $session["username"];
+	$values = $this->sql->execute( "postUser" , array( $username ) )->getArray();
+	print_r( $values );
+*/
+?>
+<div id="user_node_content">
+	<div id="user_node_label">Change settings</div>
+	<form onsubmit="return false;" id="UserNodeForm">
+		<table cellspacing="0" cellpadding="0" border="0" style="width : 100%;">
+			<tr><td colspan="2"><div class="user_node_fields">Private fields</div></td></tr>
+			<tr>
+				<td class="register_column_left">
+					Password
+				</td>
+				<td>
+					<input class="input_user_node" type="password" name="pass" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Password again...
+				</td>
+				<td>
+					<input class="input_user_node" type="password" name="pass_check" />
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Email
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="email" value="" />
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td colspan="2"><div class="user_node_fields">Public fields</div></td></tr>
+			<tr>
+				<td class="register_column_left">
+					Avatar URL
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="avatar_url" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Location
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="location" value="" />
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Jabber
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="im_jabber" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					MSN Messenger
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="im_msn" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					ICQ
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="im_icq" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					AIM
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="im_aim" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="register_column_left">
+					Yahoo Messenger
+				</td>
+				<td>
+					<input class="input_user_node" type="text" name="im_yahoo" value="" />
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Signature
+				</td>
+				<td>
+					<textarea class="input_user_node_signature" name="signature"></textarea>
+				</td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td class="register_column_left">
+					Password verification
+				</td>
+				<td>
+					<input class="input_user_node" type="passwords" name="pass_ver" />
+					<span class="input_required"> *</span>
+				</td>
+			</tr>
+		</table>
+		<div style="color : #666666;"><br />* Required</div><br /><br />
+		<input type="submit" value="Make changes" style="width : 100px;" /><br />
+	</form>
+</div>
+<div id="user_node_message"></div>

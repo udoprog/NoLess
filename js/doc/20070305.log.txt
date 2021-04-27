@@ -1,0 +1,16 @@
+Log system is functional
+
+	to be done before wednesday ( 2007-03-07 ):
+		forum is going to be more stable with:
+			- thread display ( displaying thread_name, creation date, posts, description )
+			- entry display ( content , author , creation date )
+			
+	There is also some display work to be done, to make forum more easily navigatable and to make entries more sensible.
+	
+	TODO:
+	
+		XComDocument.php
+			- rewrite module, atm lots of bad hacks, the system has been proven to work properly tho.
+			plan:
+				XComDocument->append - shall take several different arguments ( DOMElement , Array of DOMElement's , Assoc Array , String , etc... )
+				XComDocument->readMsgHandler - shall be able to read a 'NMsgHandler' object to build outputs.

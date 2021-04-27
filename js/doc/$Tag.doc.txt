@@ -1,0 +1,15 @@
+function $Tag
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$Tag( string object_tag [, object document] );
+	@1( string object_tag ):
+		string: defines the tagname which is going to be fetched
+	@2( object document ):
+		object: defines the object span in which the getElementBuTagName is going to be run, if not defined it's 'document'
+	
+	
+
+returns list of objects with corresponding tags on success
+throws exceptions on failure

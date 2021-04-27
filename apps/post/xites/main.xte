@@ -1,0 +1,31 @@
+<div id="content_news">
+	<div id="content_news_top">
+		<img src="./gfx/content_news_tl.png" id="content_news_tl" />
+		<img src="./gfx/content_news_tr.png" id="content_news_tr" />
+	</div>
+	<div id="content_news_post">
+		Link the first post in the most recent thread made in the 'Announcements' sub forum.<br /><br />
+		<div id="content_news_list">
+			<span onclick="act_ListNews()" class="link">List news</span>
+		</div>
+		<br /><br /><br /><br />
+		
+		<span style="color : #666666;">
+			Posted by: Scorch<br />
+			Date: 1st of March, 2007
+		</span>
+	</div>
+	<div id="content_news_bottom">
+		<img src="./gfx/content_news_bl.png" id="content_news_bl" />
+		<img src="./gfx/content_news_br.png" id="content_news_br" />
+	</div>
+</div>
+
+<div id="content_what_is_post">
+	<img src="./gfx/main_what_is_ost.png" onclick="$link( 'main_content' , 'faq' )" alt="What is post?" class="link" />
+</div>
+<div>
+	<div id="content_discussion">
+		Discussion
+	</div>
+</div>

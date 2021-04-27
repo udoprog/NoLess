@@ -1,0 +1,93 @@
+		<div id="top_large_rightbox_left">
+			Post is never empty!<br />
+			So thou shallt obey!<br />
+			
+			<?
+				if ( $this->nsecure->checkSession( ) ) {
+			?>
+			<div>
+				<table cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td style="width : 67px;">
+							<span style="color : #666666;">
+								Logged in as
+							</span>
+						</td>
+						<td>
+							<span style="color : #FF0000;">
+								<? 
+									$session = $this->nsecure->getSession(); 
+									echo( $session );
+								?>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="width : 67px;">
+							<span style="color : #666666;">
+								Forum Posts
+							</span>
+						</td>
+						<td>
+							<span style="color : #FF0000;">
+								523
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span style="color : #666666;">
+								Quest Level
+							</span>
+						</td>
+						<td>
+							<span style="color : #FF0000;">
+								3
+							</span>
+						</td>
+					</tr>
+				</table>
+				<?
+					}
+					else {
+				?>
+				<br />
+				<div>You must <span onclick="$link( 'top_large_rightbox' , 'users/login' , true )" class="link">login</span>.</div>
+				<div>Or would you like to <span onclick="$link( 'main_content' , 'users/register' , true )" class="link">register</span>?</div>
+				<?
+					}
+				?>
+				<br />
+				<span onclick="ToggleTop( true )" class="link">Minimize</span><? 
+				
+					if ( $this->nsecure->checkSession( ) ) { 
+				?>, <span onclick="act_Logout()" class="link">logout</span> 
+				<? 
+					} 
+				?>
+			</div>
+		</div>
+		<div id="top_large_rightbox_right">
+		
+		<!--
+		<span onclick="$link( 'main_content' , 'users/register' , true )" class="link">
+			Register</span><br />
+		<span onclick="$link( 'main_content' , 'users/register' )" class="link">
+			Login
+		</span>
+		-->
+		<img src="./gfx/standard_avatar.png" alt="User Avatar" style="border : 1px solid #666666;" />
+		<!--
+			<form onsubmit="return frm_LoginSubmit()" id="LoginForm">
+				<input type="hidden" name="action" value="login" />
+					Username <input type="text" name="name" />
+				<br />
+					Password <input type="password" name="pass" />
+				<br />
+									<div id="login_error"></div>
+				<input type="submit" value="LOGIN" /><br />
+				Maybe you would like to <a onclick="$link( 'main_content' , 'register' )" href="#">register</a> first?<br />
+				
+			</form>
+		-->
+		</div>

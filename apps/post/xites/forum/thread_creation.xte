@@ -1,0 +1,27 @@
+<div class="forum_form_label">
+	<b>Create Thread</b>
+</div>
+
+<div id="forum_thread_viewing"></div>
+<br />
+
+<form onsubmit="return Forum.create_thread()" id="ThreadForm">
+	<table cellspacing="0" cellpadding="0" border="0" class="forum_create_table">
+		<tr>
+			<td class="forum_create_td_left">
+				Thread name
+			</td>
+			</td>
+				<input id="forum_create_thread_input" name="name" type="text" class="forum_create_input">
+			</td>
+		</tr>
+	</table>
+	
+	<input id="forum_thread_creation_parent" name="parent" type="hidden" />
+	<input name="author" type="hidden" value="hej" />
+	<input name="owner" type="hidden" value="admin" />
+	<input name="permission" type="hidden" value="777" />
+	<input name="group" type="hidden" value="admin" />
+	
+	<input type="submit" value="Create Thread" class="forum_create_submit" />
+</form>

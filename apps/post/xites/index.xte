@@ -1,0 +1,36 @@
+<div id="top_large">
+	<div id="top_large_sizer" />
+	<div id="top_large_leftbox" onclick="$link( 'main_content' , 'main' )" class="link"><!-- Logo --></div>
+	<div id="top_large_rightbox"><!-- linked to users/top_large_rightbox.xte --></div>
+</div>
+
+<div id="top_small">
+	<div id="top_small_sizer" />
+	<div id="top_small_leftbox">
+		<span id="small_logo">P.OST</span>
+		<span id="small_logo_caption">IT'S FOR EVERYONE</span>
+	</div>
+	<div id="top_small_rightbox">
+	</div>
+</div>
+
+<div id="main_container">
+	<div id="main_top">
+		<div id="main_top_fix"></div>
+		<div id="navigation_main">
+			<!-- linked to navigation.xte -->
+		</div>
+		<div id="navigation_bottom">
+			<img src="./gfx/navigation_bottom_left.png" id="navigation_bottom_left" />
+			<img src="./gfx/navigation_bottom_right.png" id="navigation_bottom_right" />
+		</div>
+		<div id="main_content">
+			<!-- linked to main.xte -->
+		</div>
+	</div>
+	<div id="main_bottom">
+		<img src="./gfx/main_center_bottom_bl.png" id="main_bottom_bl" />
+		<img src="./gfx/main_center_bottom_br.png" id="main_bottom_br" />
+		&nbsp;Copyleft - <span style="color : #666666;">Created by Scorch and Septic</span>
+	</div>
+</div>

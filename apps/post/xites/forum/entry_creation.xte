@@ -1,0 +1,23 @@
+<div class="forum_form_label">
+	<b>Create Entry</b>
+</div>
+
+<form onsubmit="return Forum.create_entry()" id="EntryForm">
+	<table cellspacing="0" cellpadding="0" border="0" class="forum_create_table">
+		<tr>
+			<td class="forum_create_td_left">
+				Content
+			</td>
+			<td>
+				<textarea id="forum_create_entry_input" name="content" class="forum_create_textarea"></textarea>
+			</td>
+		</tr>
+	</table>
+	
+	<input id="forum_entry_creation_thread" name="thread" type="hidden" />
+	<input name="owner" type="hidden" value="admin" />
+	<input name="permission" type="hidden" value="777" />
+	<input name="group" type="hidden" value="admin" />
+	
+	<input type="submit" value="Create Entry" class="forum_create_submit" />
+</form>

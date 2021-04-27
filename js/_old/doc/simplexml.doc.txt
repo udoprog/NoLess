@@ -1,0 +1,51 @@
+Gnarf for Javascript SimpleXML module
+Documentation and Module Written by John-John Tedro (pentropia@gmail.com)
+view Licence.txt for license information.
+
+	Dependancies in gnarf:
+		None, works standalone.
+
+	Dependancies in browser:
+		Support for DOM2
+	
+	Introduction
+		SimpleXML is a great kocnept developed by the developers of PHP (uncertain?).
+		The beauty is that it simplifies manipulation of the DOM and makes code shorter and more readable.
+		
+	Object Structure
+	
+		SimpleXML
+		SimpleXMLNode
+		SimpleXMLTextNode
+		SimpleXMLComment	<-! Coming
+		SimpleXMLAttr
+		
+		SimpleXML
+			|	Utilises other objects to create a simple structure of xml-files.
+			|
+			load( xml )
+			|	|	Loads Document Object into a SimpleXMLNode - tree.
+			|
+			load_text( xml_string )
+				|	Loads XML string into a SimpleXMLNode - tree.
+		
+		
+		Example of a SimpleXMLNode - tree.
+		[SimpleXMLNode] initialised as ROOT.
+		['@'] =>		[SimpleXMLAttr]
+						['attribute1_name'] => "Attribute1 Value",
+						[...] => ...
+						
+		['$'] =>		[Array]
+						[0] =>	[SimpleXMLTextNode]
+								['value'] =>	"TextNode Content!"
+						[.] =>	...
+						
+		['nodetag1'] =>	[Array]
+						[0] =>	[SimpleXMLNode]
+								...
+						[.] =>	...
+		['nodetag2'] => ...
+		[...] => ...
+		
+		

@@ -1,0 +1,45 @@
+<div id="faq">
+	<h1>
+		FAQ
+	</h1>
+	<list>
+		<li>
+			<a href="#1">WTF - What IS P.OST?</a>
+		</li>
+		<li>
+			<a href="#2">WHY is P.OST?</a>
+		</li>
+		<li>
+			<a href="#3">Im confused... What is the NoLess project?</a>
+		</li>
+		<li>
+			<a href="#4">Wait, wtf! I thought you guys were serious!</a>
+		</li>
+	</list>
+	<br />
+	<div id="1">
+		<b>WTF - What IS P.OST?</b><br />
+		P.OST is an fully, available to all, buildable webapplication.<br />
+		The original concept was to create a sort of Wiki-style content engine that everyone could edit and build to whatever they wanted, at their own leisure. Another important part was to make it server-friendly, thereby minimizing the loads and enabling it to work on 'bad' servers. Original concept fu**ed up when we realised that Javascript at the present day didn't really support the 'full-content' engine we were aiming at building. So it mostly just developed into a user-friendly developer package.<br />
+		It also twisted out into the NoLess project, which isn't that bad.<br />
+		Or you can just say we didn't wan't to rely on someone elses framework since there is some 'pride' in using your own.
+	</div>
+	<br />
+	<div id="2">
+		<b>WHY is P.OST?</b><br />
+		Well... we didn't wan't all this work go to waste, so even though it isn't - everything - we expected, it's still alot! Just download the source code and have a look yourself, it's got quite som nifty features.
+	</div>
+	<br />
+	<div id="3">
+		<b>Im confused... What is the NoLess project?</b><br />
+		The NoLess project is a Php framework, for simplifying the order in which your application executes. It's also got a lot of clientside candy you can use to make your applications feel mora alive. This involves alot of Ajax and Stuff like simplifying DOM traversation or XML interpretation (Don't you just love XML!).<br />
+		It's hard to get a grip around NoLess though since there is practically no documentation (over the one embedded inside the source files). But there is hope of a documentation project in the future.<br />
+		NoLess is a school-project, yes, we don't take credit in being all 'serious - business - support - application - framework - speed - my - monkeys - got - the - hots - yadayada' type of framework.<br />
+		NoLess IS free, it's OPEN, we would just love to share it and improve it with the W3 community. So if you've got somthing you would like to add, just open up, and feel free.
+	</div>
+	<br />
+	<div id="4">
+		<b>Wait, wtf! I thought you guys were serious!</b><br />
+		Coming up...
+	</div>
+</div>

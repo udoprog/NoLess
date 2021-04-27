@@ -1,0 +1,5 @@
+<span>
+	Your current quest level is 3. Advance to level 4 by entering the answer below.<br /><br />
+</span>
+<input type="text" name="input_quest" /> 
+<input type="submit" value="Advance" />

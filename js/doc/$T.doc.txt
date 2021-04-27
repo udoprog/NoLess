@@ -1,0 +1,12 @@
+function $T
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$E( string element_string );
+	@1( string element_string ):
+		string: defines the content of the text node being created by document.createTextNode(  );
+	
+
+returns created element on success
+throws exceptions on failure

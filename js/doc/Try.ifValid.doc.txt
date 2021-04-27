@@ -1,0 +1,13 @@
+method Try.ifValid
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	Try.ifString( varying lambda );
+	@1( varying lambda  ):
+		varying: varying instance/object/value to test if it is 'valid'
+	
+	'valid' means not undefined | null | false
+	
+returns true if @lambda is 'valid'
+returns false if @lambda is not 'valid'

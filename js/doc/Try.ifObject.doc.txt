@@ -1,0 +1,12 @@
+method Try.ifObject
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	Try.ifString( object instance );
+	@1( object instance ):
+		object: object to test if it is valid object
+	
+
+returns true if @instance is object
+returns false if @instance is not object

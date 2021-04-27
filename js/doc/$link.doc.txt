@@ -1,0 +1,20 @@
+function $link
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: NClient.js
+	
+	$link( string object_id , string xite_path [ , string/bool css_path [ , function finalize ] ] );
+	@1( string object_id ):
+		stromg: defines the object element which is going to be linked to a specific xite.
+	@2( string xite_path ):
+		string: defines xite path without .xte extension
+		ex. "main" | "sub_dir/other".
+	~@3( string/bool css_path )
+		string: defines the path to the css element
+		bool: true, uses same path as xite_path. false, there is no css.
+		ex. "main" => "./css/main.css" | "sub_dir/other" => "./css/sub_dir/other.css".
+	~@4( function finalize )
+		function: defines what function to notify ( with @1 as 'xco' object ) whn linking successful.
+
+returns false on success
+throws exceptions on failure

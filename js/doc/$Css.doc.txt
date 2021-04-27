@@ -1,0 +1,21 @@
+function $Css
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	$Css( string path , string id );
+	@1( string path ):
+		string: defines the path of where the css file resides
+	@2( string id ):
+		string: defines the id the css element is going to have
+		
+	This function is useful when you wan't to have several css files and have easy access to change between these.
+	If the function stumbles over an existing id it will simply just change the href on it to correspond with the new css,
+	effectively changing the path.
+	
+	Requires:
+		€$
+		€$Tag
+	
+returns new object element (css link object) on success
+throws exceptions on failure

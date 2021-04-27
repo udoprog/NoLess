@@ -1,0 +1,4 @@
+Edit page<br />
+<input type="text" name="xte_name" id="edit_xte_name" /><input type="button" value="Get XitE" onclick="$link( 'edit_xte_content' , $( 'edit_xte_name' ).value );" /><br />
+<textarea id="edit_xte_content"></textarea><br />
+<input type="submit" />

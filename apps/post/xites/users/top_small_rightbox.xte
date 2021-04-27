@@ -1,0 +1,24 @@
+<div id="top_small_rightbox_left">
+	
+</div>
+<div id="top_small_rightbox_right">
+
+<?
+	if ( $this->nsecure->checkSession( ) ) {
+?>
+	<span style="font-size : 11px;">Logged in as <? 
+	
+		$session = $this->nsecure->getSession(); 
+		echo ( $session . ". " );
+		?>
+			<span onclick="act_Logout()" class="link">Logout</span> -
+		<?
+	}
+	else {
+?>
+<span>Not Logged In. </span>
+<?
+	}
+?>
+<span onclick="ToggleTop( false )" class="link">Maximize</span>
+</div>

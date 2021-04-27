@@ -1,0 +1,16 @@
+                                                                                                 
+------------------------------------------------------------------------------------------------|
+    The entire GnaRF framework is released under the GPL license.                               |
+    License information : http://gnu.org/copyleft/gpl.html                                      |
+    It is also released 'as is' without any warranty what so ever.                              |
+    The various developer can thereby NOT be held responsible for damage caused by the use of   |
+    any code released with the framework.                                                       |
+                                                                                                |
+    With that said...                                                                           |
+    Have fun using and developing GnaRF!                                                        |
+                                                                                                |
+                                                                                                |
+    If you would like to make a contribution to the project, please contact us with example     |
+    coding and arguments for why it is necessery.                                               |
+------------------------------------------------------------------------------------------------|
+                                                                                                 

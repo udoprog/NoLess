@@ -1,0 +1,19 @@
+table.login {
+	width : 100%;
+}
+
+td.login_column_left {
+	width : 80px;
+}
+
+input.login_submit {
+	width : 102px;
+}
+
+input.login {
+	width : 100%;
+}
+
+div#login_error {
+	height : 16px;
+}

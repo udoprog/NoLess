@@ -1,0 +1,62 @@
+method Try.evalid( varying value , object rules )
+	written by septic ( pentropia at gmail dot com )
+	released under the GPL public license
+	file: A_Tools.js
+	
+	Try.evalid( varying value , object rules );
+	@1( varying value )
+		value which is going to be tested against rules.
+	@2( object rules )
+		Here comes a list of all the properties the rules object is gonna take actions from
+		rules:				rules on which the evalid process should perform.
+		rules.test:			array or single value which is going to be tested.
+		rules.property:		value might be an element, and here you can specify property.
+		rules.mod:			type of operation between value and tests.
+		rules.preg:			regular expression on value.
+	
+On valid, returns 0.
+On invalid throws a bunch of different TryExceptions or returns errorcode.
+
+1	TryException( string , Try.EVA_ERR_INVALID );	Failed Try.ifValid test.
+2	TryException( string , Try.EVA_ERR_TYPE );		Untestable type.
+3	TryException( string , Try.EVA_ERR_LES );		@value not less than 'test'.
+4	TryException( string , Try.EVA_ERR_LTE );		@value not less or equal to 'test'.
+5	TryException( string , Try.EVA_ERR_LAR );		@value not larger than 'test'.
+6	TryException( string , Try.EVA_ERR_LTA );		@value not larger or equal to 'test'
+7	TryException( string , Try.EVA_ERR_EQU );		@value not equal to 'test'
+8	TryException( string , Try.EVA_ERR_NEQ );		@value is equal ( but failed not equal test ) against 'test'
+9	TryException( string , Try.EVA_ERR_PREG );		@value failed preg.test
+
+Example 1:
+
+	Try.evalid(
+		"foo",
+		{
+			test: 5,
+			mod: "<=",
+			property: "length"
+		}
+	);
+	// Would return false
+	
+Example 2:
+	
+	Try.evalid(
+		"foo",
+		{
+			test: [ "bar" , "foo" ],
+			mod: "=="
+		}
+	);
+	// Would return false ( since foo == foo )
+	
+Example 3:
+	
+	Try.evalid(
+		"foo",
+		{
+			test: [ "bar" , "foo" ],
+			mod: "!="
+		}
+	);
+	// Would throw exception 8 or return 8

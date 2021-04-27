@@ -1,0 +1,36 @@
+div#user_node_message {
+	padding : 4px;
+	color : #FF0000;
+}
+
+div#user_node_label {
+	font-weight : bold;
+	font-size : 13px;
+	text-align : center;
+}
+
+input.input_user_node {
+	width : 220px;
+	
+	padding : 1px;
+	margin-bottom : 1px;
+}
+
+textarea.input_user_node_signature {
+	width : 220px;
+	height : 60px;
+}
+
+td.user_node_column_left {
+	width : 110px;
+	vertical-align : top;	
+}
+
+div.user_node_fields {
+	padding : 4px;
+	margin-top : 10px;
+	margin-bottom : 6px;
+	border : 1px solid #3b1a2f;
+	background-color : #713245;
+	font-weight : bold;
+}

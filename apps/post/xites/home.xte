@@ -1,0 +1,6 @@
+<foreach query="listforums" operation="forumIterator" id="test">
+		<link href="thread_name">
+			<element fetch="thread_name" />
+		</link><br />
+		Info : <element fetch="thread_info" /><br />
+</foreach>

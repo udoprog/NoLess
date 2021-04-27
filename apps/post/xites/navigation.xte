@@ -1,0 +1,10 @@
+<span onclick="act_ViewForum( 0 )" class="link">Forum</span>
+<img src="./gfx/navigation_main_separator.png">
+
+<span onclick="$link( 'main_content' , 'users/user_node' , true )" class="link">User Node</span>
+<img src="./gfx/navigation_main_separator.png">
+
+<span onclick="$link( 'main_content' , 'users/upgrade' , false )" class="link">Upgrade</span>
+<img src="./gfx/navigation_main_separator.png">
+
+<span onclick="$link( 'main_content' , 'post/edit' , true )" class="link">Edit Nodes</span>

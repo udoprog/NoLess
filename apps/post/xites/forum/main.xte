@@ -1,0 +1,19 @@
+<div>
+	<div id="forum_caption">
+		P.OST Bulletin Board
+	</div>
+	
+	<div id="forum_thread_tree"></div>
+	<div id="forum_thread_messages"></div>
+	<div id="forum_thread_list"></div><br /><br />
+	
+	<div id="forum_entry_messages"></div>
+	<div id="forum_entry_list"></div><br /><br />
+	
+	</div>
+	
+	<div id="forum_thread_creation">
+	</div>
+	<div id="forum_entry_creation">
+	</div>
+</div>

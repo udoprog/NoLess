@@ -1,0 +1,30 @@
+div#register_message {
+	padding : 4px;
+	color : #FF0000;
+}
+
+input.input_register {
+	width : 220px;
+	
+	padding : 1px;
+	margin-bottom : 1px;
+}
+
+textarea.input_register_signature {
+	width : 220px;
+	height : 60px;
+}
+
+td.register_column_left {
+	width : 110px;
+	vertical-align : top;	
+}
+
+div.register_fields {
+	padding : 4px;
+	margin-top : 10px;
+	margin-bottom : 6px;
+	border : 1px solid #3b1a2f;
+	background-color : #713245;
+	font-weight : bold;
+}
